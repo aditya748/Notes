@@ -1,0 +1,31 @@
+(function(){
+	var app=angular.module('Social',['ui.router']).config(function($stateProvider,$urlRouterProvider){
+		$urlRouterProvider.otherwise('/');
+		$stateProvider.state('signup',{
+			url:"/signup",
+			templateUrl:"app/sign/signup.html",
+			controller:'SignupController'
+		})
+		
+		.state('main',{
+			url:'/',
+			templateUrl:"app/main/main.html",
+			controller:"mainController"
+            })
+		.state('edit',{
+			url:'/edit',
+			templateUrl:"app/notes/edit.html",
+			controller:"editcontroller"
+		})
+		.state('login',{
+			url:'/login',
+			templateUrl:'app/navigation/login.html',
+			controller:'logincontroller'
+		})
+		.state('addnote',{
+		url:'/addnote',
+		templateUrl:'app/notes/notes.html',
+		controller:'notescontroller'
+	});
+	});
+}());

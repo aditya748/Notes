@@ -1,0 +1,15 @@
+{
+  "name": "Social",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-ui-router": "^0.2.17",
+    "body-parser": "^1.14.2",
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.13.4",
+    "fs-extra": "^0.26.5",
+    "mongoose": "^4.4.0",
+    "ng-file-upload": "^11.2.3",
+    "path": "^0.12.7"
+  }
+}

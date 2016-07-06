@@ -1,0 +1,43 @@
+<<!DOCTYPE html>
+<html ng-app="Social">
+<head>
+	<title>Facebook</title>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="node_modules/angular/angular.js"></script>
+
+<script type="text/javascript" src="node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+
+<script type="text/javascript" src="app/app.js"></script>
+<script type="text/javascript" src="app/sign/signupcontroller.js"></script>
+<script type="text/javascript" src="app/navigation/navigation.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="app/navigation/logincontroller.js"></script>
+<script type="text/javascript" src="app/notes/notescontroller.js"></script>
+<script type="text/javascript" src="app/main/main-controller.js"></script>
+<script type="text/javascript" src="app/notes/editcontroller.js"></script>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container" ng-controller="navigation">
+   <div class="row" ng-show="!loggedIn">
+   	   <input type="text" ng-model="login.email">
+   	   <input type="password" ng-model="login.password"><button ng-click="loginuse()">LogIn</button><a ui-sref="signup">Create Account</a>
+   </div>
+   <div ng-show="loggedIn" class="pull-right">
+   
+   <a ui-sref="addnote" class="btn btn-primary btn-sm">Add Note</a>
+<a ng-click="logout()" class="btn btn-primary btn-sm">Logout</a>
+
+   </div>
+  </div>
+</nav>
+<div ui-view id="view"></div>
+</body>
+
+
+
+
+</html>

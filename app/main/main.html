@@ -1,0 +1,22 @@
+<h1 class="col-md-offset-5" style="margin-top: 50px">My Notes</h1>
+<button type="button" class="btn btn-danger" ng-click="deletemulti()"><span class="glyphicon glyphicon-remove"></span> Delete Multiple</button>
+<div style="margin: 70px 70px">
+<div class="row" ng-init="limit=4">
+  <div class="col-md-6" ng-repeat="note in notes | limitTo:limit |orderBy: note.date">
+    <div class="thumbnail" ng-switch="note.priority">
+
+    	<img src="images/red.jpg" class="pull-left" ng-switch-when="red">
+    	<img src="images/yellow.jpg"class="pull-left" ng-switch-when="yellow">
+    	<img src="images/green.jpg" class="pull-left" ng-switch-when="green">
+    	<input type="checkbox" class="pull-right"  ng-click="addmulti(note._id,$index)" />
+      <div class="caption">
+        <h3>Note {{$index}}</h3>
+        <p>{{note.content}}</p>
+        <p><button type="button" class="btn btn-danger" ng-click="delete(note._id,$index)"><span class="glyphicon glyphicon-remove"></span> Delete</button>&nbsp;&nbsp;<a href="#" class="btn btn-default" ng-click="edit(note._id)" role="button">Edit</a></p>
+      </div>
+    </div>
+  </div>
+  
+</div>
+<a href="#" ng-click="limit=limit+4" class="btn btn-block btn-default">Load More</a>
+</div>
